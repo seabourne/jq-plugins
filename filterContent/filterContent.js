@@ -1,4 +1,4 @@
-jQuery.fn.filterContent = function(filterField, filterContainer)
+jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 {
 	var $containers = $(this);
 
@@ -29,12 +29,19 @@ jQuery.fn.filterContent = function(filterField, filterContainer)
 
 		var $filterField = $(this).find(filterField)
 		var $filterContainer = $(this).next(filterContainer);
-		var element = $filterField.attr('data-element');
+
+		if ($filterField.attr('data-element')) {
+			var element = $filterField.attr('data-element');
+		} else if (filterElement) {
+			var element = filterElement;
+		}
 
 		if (typeof(element) == "undefined" || element === '') {
 			var $filterContent = $('#'+$filterField.attr('name'));
-		} else {
+		} else if ($filterField.attr('data-container')) {
 			var $filterContent = $('#'+$filterField.attr('data-container')).find(element);
+		} else {
+			var $filterContent = $('#'+$filterField.attr('name')).find(filterElement);
 		}
 
 		$filterField.keyup( function() {
