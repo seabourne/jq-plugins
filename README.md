@@ -13,6 +13,7 @@ Example: www.fcc.gov/tools/headlines-archive/2011
 
 Usage:
 	$(".filterForm").filterContent('.filterField','.filterContainer','p');
+
 - .filterForm is the form doing the searching
 - .filterField is the search field
 - .filterContainer is the element to search in

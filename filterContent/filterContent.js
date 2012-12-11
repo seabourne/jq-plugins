@@ -1,17 +1,3 @@
-/**
- * This plugin enables quick filtering of content through a textfield. Call this function to enable all filter forms on page
- * There may be multiple on a page, just check your id's.
-
-$("<< search box >>").filterContent('<< search wrapper >>','<< filtered wrapper >>','.<< optional, filtered element >>');
-ex: $(".filterContent").filterContent('.filteredContentForm','#formslookuptext');
-
- * filterContainer is required and is the container that wraps the content you want to filter.
- * filterElement is optional and is an html element or a css className that you want to filter on, instead of every child in the container
- * 
- * If no filterElement is supplied, *every* child of the filterContainer will be shown/hidden on match
- * If a filterElement is supplied, groups will show and hide by focusing on the filterElement.
- **/
-
 jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 {
 	var $containers = $(this);
