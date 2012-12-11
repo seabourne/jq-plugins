@@ -10,15 +10,15 @@ Javascript
 
 	$(".filterForm").filterContent('.filterField','.filterContainer','p');
 
-- .filterForm is the form doing the searching
-- .filterField is the search field
-- .filterContainer is the element to search in
-- p is the child to search on inside .filterContainer. It is optional, without it all children will be searched.
+- `.filterForm` is the form doing the searching
+- `.filterField` is the search field
+- `.filterContainer` is the element to search in
+- `p` is the child to search on inside `.filterContainer`. It is optional, without it all children will be searched.
 
 HTML
 ----
 
-	<form class="filterForm">
+	<form class="*filterForm*">
 		<input type="text" class="filterField" name="container1" />
 	</form>
 
@@ -28,4 +28,4 @@ HTML
 		<p>So still and subdued and yet somehow preluding was all the scene, and such an incantation of reverie lurked in the air, that each silent sailor seemed resolved into his own invisible self.</p>
 	</div>
 
-If you have more than one searchable element, be sure to have an <input name="uniqueID"> pointing to an element with id="uniqueID".
+If you have more than one searchable element, be sure to have an `<input name="uniqueID">` pointing to an element with `id="uniqueID"`.
