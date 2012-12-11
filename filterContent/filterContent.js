@@ -2,6 +2,29 @@ jQuery.fn.filterContent = function(filterField, filterContainer)
 {
 	var $containers = $(this);
 
+	var showFilteredElements = function(el,text) {
+		if(el.html().toLowerCase().indexOf(text.toLowerCase()) != -1){
+			el.show();
+			el.find('*').show();
+		}
+	}
+
+	var showElements = function(el,container) {
+		if (typeof(el) == "undefined" || el === '') {
+			container.find('*').show();
+		} else {
+			container.show();
+		}
+	}
+
+	var hideElements = function(el,container) {
+		if (typeof(el) == "undefined" || el === '') {
+			container.find('*').hide();
+		} else {
+			container.hide();
+		}
+	}
+
 	$containers.each(function(i) {
 
 		var $filterField = $(this).find(filterField)
@@ -16,36 +39,26 @@ jQuery.fn.filterContent = function(filterField, filterContainer)
 
 		$filterField.keyup( function() {
 			var srchform = $filterField.val();
+
+			// resetting the form
 			if (srchform === '') {
-				if (typeof(element) == "undefined" || element === '') {
-					$filterContent.find('*').show();
-				} else {
-					$filterContent.parents('.filterContainer').show();
-					$filterContent.show();
-				}
+				showElements(element, $filterContent);
 				return;
 			}
-			// Hide everything, depending if we're sticking to an element hide containers
-			if (typeof(element) == "undefined" || element === '') {
-				$filterContent.find('*').hide();
-			} else {
-				$filterContent.parents('.filterContainer').hide();
-				$filterContent.hide();
-			}
+
+			// Hide the filtered content in the container
+			hideElements(element, $filterContent);
 
 			// Search the $filterContent for any string that contains the search forms value
-			if (typeof(element) == "undefined" || element === '') {				
+			if (typeof(element) == "undefined" || element === '') {
 				$filterContent.children().each(function(){
 					var $me = $(this);
-					if($me.html().toLowerCase().indexOf(srchform.toLowerCase()) != -1){
-						$me.show();
-						$me.find('*').show();
-					}
-				});				
+					showFilteredElements($me,srchform);
+				});
 			} else {
-				$filterContent.find(':contains("' + srchform + '")').each(function() {
-					$(this).parents('.filterContainer').show();
-					$(this).parent(element).show();
+				$filterContent.each(function(i) {
+					var $me = $(this);
+					showFilteredElements($me,srchform);
 				});
 			}
 		});
