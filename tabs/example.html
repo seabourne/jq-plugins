@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>tabs</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+	<ul class="tabs">
+		<li><a href='#tab1-1'>Tab 1</a></li>
+		<li><a href='#tab1-2'>Tab 2</a></li>
+		<li><a href='#tab1-3'>Tab 3</a></li>
+	</ul>
+	<div id='tab1-1'>
+		<p>This is the first tab.</p>
+	</div>
+	<div id='tab1-2'>
+		<p>This is the 2nd tab.</p>
+	</div>
+	<div id='tab1-3'>
+		<p>And this is the 3rd tab.</p>
+	</div>
+
+	<hr />
+
+	<ul class="tabs">
+		<li><a href='#tab2-1'>Tab 1</a></li>
+		<li><a href='#tab2-2'>Tab 2</a></li>
+		<li><a href='#tab2-3'>Tab 3</a></li>
+	</ul>
+	<div id='tab2-1'>
+		<p>This is the first tab.</p>
+	</div>
+	<div id='tab2-2'>
+		<p>This is the 2nd tab.</p>
+	</div>
+	<div id='tab2-3'>
+		<p>And this is the 3rd tab.</p>
+	</div>
+
+	<hr />
+
+	<ul class="tabs">
+		<li><a href='#tab3-1'>Tab 1</a></li>
+		<li><a href='#tab3-2'>Tab 2</a></li>
+		<li><a href='#tab3-3'>Tab 3</a></li>
+	</ul>
+	<div id='tab3-1'>
+		<p>This is the first tab.</p>
+	</div>
+	<div id='tab3-2'>
+		<p>This is the 2nd tab.</p>
+	</div>
+	<div id='tab3-3'>
+		<p>And this is the 3rd tab.</p>
+	</div>
+
+	<script type="text/javascript" src="tabs.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".tabs").tabs();
+		});
+	</script>
+
+</body>
+</html>

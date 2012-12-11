@@ -1,5 +1,5 @@
 filterContent
-=======
+=============
 
 Refine results to only show what a user has typed.
 
