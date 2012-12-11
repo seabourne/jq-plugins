@@ -8,11 +8,12 @@ Example: www.fcc.gov/tools/headlines-archive/2011
 Javascript
 ----------
 
-	$(".filterForm").filterContent('.filterField','.filterContainer');
+	$(".filterForm").filterContent('.filterField','.filterContainer','p');
 
 - `.filterForm` is the form doing the searching
 - `.filterField` is the search field
 - `.filterContainer` is the element to search in
+- `p` is the child element to search on. Optional, can be a class, id, element, etc. Without it all children will be searched on. Can also be accomplished (and overriden) using `data-element` in HTML.
 
 HTML
 ----

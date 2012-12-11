@@ -3,7 +3,7 @@ jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 	var $containers = $(this);
 
 	var showFilteredElements = function(el,text) {
-		if(el.html().toLowerCase().indexOf(text.toLowerCase()) != -1){
+		if(el.text().toLowerCase().indexOf(text.toLowerCase()) != -1){
 			el.show();
 			el.find('*').show();
 		}
