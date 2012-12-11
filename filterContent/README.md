@@ -5,7 +5,8 @@ Refine results to only show what a user has typed.
 
 Example: www.fcc.gov/tools/headlines-archive/2011
 
-Javascript:
+Javascript
+----------
 
 	$(".filterForm").filterContent('.filterField','.filterContainer','p');
 
@@ -14,7 +15,8 @@ Javascript:
 - .filterContainer is the element to search in
 - p is the child to search on inside .filterContainer. It is optional, without it all children will be searched.
 
-HTML:
+HTML
+----
 
 	<form class="filterForm">
 		<input type="text" class="filterField" name="container1" />
@@ -27,5 +29,3 @@ HTML:
 	</div>
 
 If you have more than one searchable element, be sure to have an <input name="uniqueID"> pointing to an element with id="uniqueID".
-
-- - -
