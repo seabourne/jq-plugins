@@ -5,7 +5,6 @@ Refine results to only show what a user has typed.
 
 Example: www.fcc.gov/tools/headlines-archive/2011
 
-Usage:
 	$(".filterForm").filterContent('.filterField','.filterContainer','p');
 
 - .filterForm is the form doing the searching
