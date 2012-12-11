@@ -1,14 +1,13 @@
-jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
+jQuery.fn.filterContent = function(filterField, filterContainer)
 {
 	var $containers = $(this);
 
 	$containers.each(function(i) {
 
-		var $filterField = $(filterField);
-		var $filterContainer = filterContainer;
-		var element = filterElement;
-
+		var $filterField = $(this).find(filterField)
+		var $filterContainer = $(this).next(filterContainer);
 		var element = $filterField.attr('data-element');
+
 		if (typeof(element) == "undefined" || element === '') {
 			var $filterContent = $('#'+$filterField.attr('name'));
 		} else {
@@ -17,12 +16,11 @@ jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 
 		$filterField.keyup( function() {
 			var srchform = $filterField.val();
-			console.log(srchform);
 			if (srchform === '') {
 				if (typeof(element) == "undefined" || element === '') {
 					$filterContent.find('*').show();
 				} else {
-					$filterContent.parents($filterContainer).show();
+					$filterContent.parents('.filterContainer').show();
 					$filterContent.show();
 				}
 				return;
@@ -31,7 +29,7 @@ jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 			if (typeof(element) == "undefined" || element === '') {
 				$filterContent.find('*').hide();
 			} else {
-				$filterContent.parents($filterContainer).hide();
+				$filterContent.parents('.filterContainer').hide();
 				$filterContent.hide();
 			}
 
@@ -44,9 +42,9 @@ jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 						$me.find('*').show();
 					}
 				});				
-			}else {
+			} else {
 				$filterContent.find(':contains("' + srchform + '")').each(function() {
-					$(this).parents($filterContainer).show();
+					$(this).parents('.filterContainer').show();
 					$(this).parent(element).show();
 				});
 			}

@@ -18,7 +18,7 @@ Javascript
 HTML
 ----
 
-	<form class="*filterForm*">
+	<form class="filterForm">
 		<input type="text" class="filterField" name="container1" />
 	</form>
 
