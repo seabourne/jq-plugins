@@ -8,12 +8,14 @@ Example:
 Javascript
 ----------
 
-	$(".tabs").tabs();
+	$(".dataTabs").tabs();
+
+Use the element that contains your list of tab links for the selector.
 
 HTML
 ----
 
-	<ul class='tabs'>
+	<ul class='dataTabs'>
 		<li><a href='#tab1'>Tab 1</a></li>
 		<li><a href='#tab2'>Tab 2</a></li>
 		<li><a href='#tab3'>Tab 3</a></li>
@@ -27,3 +29,5 @@ HTML
 	<div id='tab3'>
 		<p>And this is the 3rd tab.</p>
 	</div>
+
+Make sure your links point to a unique element on the page. The first tab will be shown by default.
