@@ -1,4 +1,4 @@
-jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
+(jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 {
 	var $containers = $(this);
 
@@ -70,4 +70,4 @@ jQuery.fn.filterContent = function(filterField, filterContainer, filterElement)
 			}
 		});
 	});
-}
+})(window);
